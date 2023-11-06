@@ -1,6 +1,6 @@
 {
   "type": "chest",
   "textures": {
-    "copper_tier": "sophisticatedstorage:entity/chest/copper"
+    "copper_tier": "extrasophisticated:entity/chest/copper"
   }
 }

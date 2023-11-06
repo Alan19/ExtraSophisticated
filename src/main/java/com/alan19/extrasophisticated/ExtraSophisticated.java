@@ -33,6 +33,7 @@ public class ExtraSophisticated {
         ModBlockEntity.BLOCK_ENTITY_TYPES.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
+        ClientEventHandler.registerHandlers();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -46,8 +47,7 @@ public class ExtraSophisticated {
     public static class ClientModEvents {
 
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
+        public static void onClientSetup(FMLClientSetupEvent event) {
         }
     }
 }
