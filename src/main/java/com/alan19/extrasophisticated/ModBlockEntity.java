@@ -1,5 +1,6 @@
 package com.alan19.extrasophisticated;
 
+import com.alan19.extrasophisticated.blocks.ModBlocks;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;

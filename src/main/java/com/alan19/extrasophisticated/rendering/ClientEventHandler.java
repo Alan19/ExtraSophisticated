@@ -1,5 +1,7 @@
-package com.alan19.extrasophisticated;
+package com.alan19.extrasophisticated.rendering;
 
+import com.alan19.extrasophisticated.ExtraSophisticated;
+import com.alan19.extrasophisticated.ModBlockEntity;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.resources.ResourceLocation;
@@ -33,7 +35,7 @@ public class ClientEventHandler {
     private static void onModelRegistry(ModelEvent.RegisterGeometryLoaders event) {
 //        event.register("barrel", BarrelDynamicModel.Loader.INSTANCE);
 //        event.register("limited_barrel", LimitedBarrelDynamicModel.Loader.INSTANCE);
-        event.register("chest", ChestDynamicModel.Loader.INSTANCE);
+//        event.register("chest", ChestDynamicModel.Loader.INSTANCE);
 //        event.register("shulker_box", ShulkerBoxDynamicModel.Loader.INSTANCE);
 //        event.register("simple_composite", SimpleCompositeModel.Loader.INSTANCE);
     }

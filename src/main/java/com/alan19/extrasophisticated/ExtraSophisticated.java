@@ -1,6 +1,9 @@
 package com.alan19.extrasophisticated;
 
+import com.alan19.extrasophisticated.blocks.ModBlocks;
 import com.alan19.extrasophisticated.configs.Config;
+import com.alan19.extrasophisticated.items.ModItems;
+import com.alan19.extrasophisticated.rendering.ClientEventHandler;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;

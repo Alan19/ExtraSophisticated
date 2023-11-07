@@ -1,15 +1,15 @@
 package com.alan19.extrasophisticated.data;
 
 import com.alan19.extrasophisticated.ExtraSophisticated;
-import com.alan19.extrasophisticated.ModBlocks;
+import com.alan19.extrasophisticated.blocks.ModBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.p3pp3rf1y.sophisticatedstorage.SophisticatedStorage;
-import net.p3pp3rf1y.sophisticatedstorage.client.render.BarrelDynamicModel;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     private final ExistingFileHelper existingFileHelper;

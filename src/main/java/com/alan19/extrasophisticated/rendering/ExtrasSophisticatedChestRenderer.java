@@ -1,5 +1,8 @@
-package com.alan19.extrasophisticated;
+package com.alan19.extrasophisticated.rendering;
 
+import com.alan19.extrasophisticated.ExtraSophisticated;
+import com.alan19.extrasophisticated.ExtraSophisticatedChestBlockEntity;
+import com.alan19.extrasophisticated.blocks.ModBlocks;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Vector3f;
@@ -15,7 +18,6 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
-import net.minecraft.client.renderer.texture.AtlasSet;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.model.Material;
 import net.minecraft.core.BlockPos;
@@ -32,7 +34,6 @@ import net.p3pp3rf1y.sophisticatedstorage.client.StorageTextureManager;
 import net.p3pp3rf1y.sophisticatedstorage.client.render.DisplayItemRenderer;
 import net.p3pp3rf1y.sophisticatedstorage.client.render.LockRenderer;
 import net.p3pp3rf1y.sophisticatedstorage.client.render.StorageRenderer;
-import net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks;
 
 import java.util.Map;
 import java.util.Optional;
@@ -176,7 +177,7 @@ public class ExtrasSophisticatedChestRenderer extends StorageRenderer<ExtraSophi
     }
 
     private Material getTierMaterial(Map<StorageTextureManager.ChestMaterial, Material> chestMaterials, Block block) {
-        if (block == com.alan19.extrasophisticated.ModBlocks.COPPER_CHEST.get()) {
+        if (block == ModBlocks.COPPER_CHEST.get()) {
             return COPPER_TIER;
         }
         return chestMaterials.get(StorageTextureManager.ChestMaterial.WOOD_TIER);
