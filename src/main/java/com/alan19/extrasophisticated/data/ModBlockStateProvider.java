@@ -4,6 +4,7 @@ import com.alan19.extrasophisticated.ExtraSophisticated;
 import com.alan19.extrasophisticated.blocks.ModBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -25,5 +26,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
         ConfiguredModel[] configuredChestModel = ConfiguredModel.builder().modelFile(new ModelFile.UncheckedModelFile(new ResourceLocation(SophisticatedStorage.MOD_ID, "block/chest"))).build();
         simpleBlockItem(ModBlocks.COPPER_CHEST.get(), uncheckedChestItemModel);
         getVariantBuilder(ModBlocks.COPPER_CHEST.get()).partialState().setModels(configuredChestModel);
+        dynamicBlockItem(ModBlocks.COPPER_BARREL.get());
+        dynamicBlockItem(ModBlocks.LIMITED_COPPER_BARREL_1.get());
+        dynamicBlockItem(ModBlocks.LIMITED_COPPER_BARREL_2.get());
+        dynamicBlockItem(ModBlocks.LIMITED_COPPER_BARREL_3.get());
+        dynamicBlockItem(ModBlocks.LIMITED_COPPER_BARREL_4.get());
+    }
+
+    private void dynamicBlockItem(Block blockItem) {
+        ResourceLocation key = ForgeRegistries.BLOCKS.getKey(ModBlocks.COPPER_BARREL.get());
+        simpleBlockItem(blockItem, new ModelFile.UncheckedModelFile(new ResourceLocation(key.getNamespace(), "block/" + key.getPath())));
     }
 }

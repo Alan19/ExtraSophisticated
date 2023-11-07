@@ -1,7 +1,7 @@
 package com.alan19.extrasophisticated.rendering;
 
 import com.alan19.extrasophisticated.ExtraSophisticated;
-import com.alan19.extrasophisticated.ExtraSophisticatedChestBlockEntity;
+import com.alan19.extrasophisticated.blocks.ExtraSophisticatedChestBlockEntity;
 import com.alan19.extrasophisticated.blocks.ModBlocks;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

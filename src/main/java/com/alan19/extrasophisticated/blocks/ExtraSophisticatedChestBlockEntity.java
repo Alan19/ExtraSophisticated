@@ -1,4 +1,4 @@
-package com.alan19.extrasophisticated;
+package com.alan19.extrasophisticated.blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntityType;

@@ -13,4 +13,9 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ExtraSophisticated.MODID);
     public static final RegistryObject<BlockItem> COPPER_CHEST = ITEMS.register("copper_chest", () -> new ExtraSophisticatedChestItem(ModBlocks.COPPER_CHEST.get()));
     public static final RegistryObject<BlockItem> COPPER_BARREL = ITEMS.register("copper_barrel", () -> new BarrelBlockItem(ModBlocks.COPPER_BARREL.get()));
+    public static final RegistryObject<BlockItem> LIMITED_COPPER_BARREL_1 = ITEMS.register("limited_copper_barrel_1", () -> new BarrelBlockItem(ModBlocks.LIMITED_COPPER_BARREL_1.get()));
+    public static final RegistryObject<BlockItem> LIMITED_COPPER_BARREL_2 = ITEMS.register("limited_copper_barrel_2", () -> new BarrelBlockItem(ModBlocks.LIMITED_COPPER_BARREL_2.get()));
+    public static final RegistryObject<BlockItem> LIMITED_COPPER_BARREL_3 = ITEMS.register("limited_copper_barrel_3", () -> new BarrelBlockItem(ModBlocks.LIMITED_COPPER_BARREL_3.get()));
+    public static final RegistryObject<BlockItem> LIMITED_COPPER_BARREL_4 = ITEMS.register("limited_copper_barrel_4", () -> new BarrelBlockItem(ModBlocks.LIMITED_COPPER_BARREL_4.get()));
+
 }

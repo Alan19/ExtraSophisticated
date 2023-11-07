@@ -1,6 +1,6 @@
 package com.alan19.extrasophisticated.rendering;
 
-import com.alan19.extrasophisticated.ExtraSophisticatedChestBlockEntity;
+import com.alan19.extrasophisticated.blocks.ExtraSophisticatedChestBlockEntity;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
