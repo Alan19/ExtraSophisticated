@@ -24,24 +24,6 @@ public class ExtraSophisticatedBarrelBlock extends BarrelBlock {
         super(numberOfInventorySlotsSupplier, numberOfUpgradeSlotsSupplier, properties, getDefaultState);
     }
 
-//    @Nullable
-//    @Override
-//    public BarrelBlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-//        return ModBlockEntity.EXTRA_SOPHISTICATED_BARREL_BLOCK_ENTITY.get().create(pos, state);
-//    }
-//
-//    @Override
-//    protected BlockEntityType<? extends StorageBlockEntity> getBlockEntityType() {
-//        return ModBlockEntity.EXTRA_SOPHISTICATED_CHEST_BLOCK_ENTITY.get();
-//    }
-//
-//    @Nullable
-//    @Override
-//    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
-//        return level.isClientSide ? createTickerHelper(blockEntityType, (BlockEntityType) ModBlockEntity.EXTRA_SOPHISTICATED_CHEST_BLOCK_ENTITY.get(), (l, p, s, be) -> ExtraSophisticatedChestBlockEntity.lidAnimateTick2((ExtraSophisticatedChestBlockEntity) be)) : super.getTicker(level, state, blockEntityType);
-//    }
-
-
     @Nullable
     @Override
     public StorageBlockEntity newBlockEntity(BlockPos pos, BlockState state) {

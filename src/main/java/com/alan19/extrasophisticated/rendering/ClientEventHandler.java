@@ -10,6 +10,7 @@ import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.p3pp3rf1y.sophisticatedstorage.client.render.BarrelRenderer;
+import net.p3pp3rf1y.sophisticatedstorage.client.render.LimitedBarrelRenderer;
 
 public class ClientEventHandler {
     public static final ModelLayerLocation CHEST_LAYER = new ModelLayerLocation(new ResourceLocation(ExtraSophisticated.MODID, "chest"), "main");
@@ -28,7 +29,7 @@ public class ClientEventHandler {
     private static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(ModBlockEntity.EXTRA_SOPHISTICATED_CHEST_BLOCK_ENTITY.get(), ExtrasSophisticatedChestRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntity.EXTRA_SOPHISTICATED_BARREL_BLOCK_ENTITY.get(), pContext -> new BarrelRenderer<>());
-        event.registerBlockEntityRenderer(ModBlockEntity.EXTRA_SOPHISTICATED_BARREL_BLOCK_ENTITY.get(), pContext -> new BarrelRenderer<>());
+        event.registerBlockEntityRenderer(ModBlockEntity.EXTRA_SOPHISTICATED_LIMITED_BARREL_BLOCK_ENTITY.get(), pContext -> new LimitedBarrelRenderer());
     }
 
     private static void stitchTextures(TextureStitchEvent.Pre event) {
