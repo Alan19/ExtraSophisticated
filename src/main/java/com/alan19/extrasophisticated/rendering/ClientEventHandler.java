@@ -30,10 +30,21 @@ public class ClientEventHandler {
         event.registerBlockEntityRenderer(ModBlockEntity.EXTRA_SOPHISTICATED_CHEST_BLOCK_ENTITY.get(), ExtrasSophisticatedChestRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntity.EXTRA_SOPHISTICATED_BARREL_BLOCK_ENTITY.get(), pContext -> new BarrelRenderer<>());
         event.registerBlockEntityRenderer(ModBlockEntity.EXTRA_SOPHISTICATED_LIMITED_BARREL_BLOCK_ENTITY.get(), pContext -> new LimitedBarrelRenderer());
+        event.registerBlockEntityRenderer(ModBlockEntity.EXTRA_SOPHISTICATED_SHULKER_BOX_BLOCK_ENTITY.get(), ExtraSophisticatedShulkerBoxRenderer::new);
     }
+
 
     private static void stitchTextures(TextureStitchEvent.Pre event) {
         stitchChestTextures(event);
+        stitchShulkerBoxTextures(event);
+    }
+
+    private static void stitchShulkerBoxTextures(TextureStitchEvent.Pre event) {
+        if (!event.getAtlas().location().equals(Sheets.SHULKER_SHEET)) {
+            return;
+        }
+
+        event.addSprite(ExtraSophisticatedShulkerBoxRenderer.COPPER_TIER_MATERIAL.texture());
     }
 
     private static void stitchChestTextures(TextureStitchEvent.Pre event) {

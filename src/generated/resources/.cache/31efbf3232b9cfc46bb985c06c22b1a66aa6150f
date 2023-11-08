@@ -1,7 +1,9 @@
-// 1.19.2	2023-11-06T22:56:38.766031	Block States: extrasophisticated
+// 1.19.2	2023-11-07T19:36:10.3308608	Block States: extrasophisticated
 c5630f368630dad6ff2ce44b8f737095f473834e assets/extrasophisticated/blockstates/copper_chest.json
+be30b12b9792c85e599993d87aa5d4ce210473cb assets/extrasophisticated/blockstates/copper_shulker_box.json
 2da94a5e267443b9929d682bb80f774b9185ef6a assets/extrasophisticated/models/item/copper_barrel.json
 a5c6e36b86b23cbd2adda95ae0f734483f162e76 assets/extrasophisticated/models/item/copper_chest.json
+743d214538b35a64499613ccd48e261c6690b5db assets/extrasophisticated/models/item/copper_shulker_box.json
 2da94a5e267443b9929d682bb80f774b9185ef6a assets/extrasophisticated/models/item/limited_copper_barrel_1.json
 2da94a5e267443b9929d682bb80f774b9185ef6a assets/extrasophisticated/models/item/limited_copper_barrel_2.json
 2da94a5e267443b9929d682bb80f774b9185ef6a assets/extrasophisticated/models/item/limited_copper_barrel_3.json

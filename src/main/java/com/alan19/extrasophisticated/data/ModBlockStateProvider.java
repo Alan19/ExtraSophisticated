@@ -26,11 +26,17 @@ public class ModBlockStateProvider extends BlockStateProvider {
         ConfiguredModel[] configuredChestModel = ConfiguredModel.builder().modelFile(new ModelFile.UncheckedModelFile(new ResourceLocation(SophisticatedStorage.MOD_ID, "block/chest"))).build();
         simpleBlockItem(ModBlocks.COPPER_CHEST.get(), uncheckedChestItemModel);
         getVariantBuilder(ModBlocks.COPPER_CHEST.get()).partialState().setModels(configuredChestModel);
+
         dynamicBlockItem(ModBlocks.COPPER_BARREL.get());
         dynamicBlockItem(ModBlocks.LIMITED_COPPER_BARREL_1.get());
         dynamicBlockItem(ModBlocks.LIMITED_COPPER_BARREL_2.get());
         dynamicBlockItem(ModBlocks.LIMITED_COPPER_BARREL_3.get());
         dynamicBlockItem(ModBlocks.LIMITED_COPPER_BARREL_4.get());
+        ModelFile.UncheckedModelFile uncheckedShulkerBoxItemModel = new ModelFile.UncheckedModelFile(new ResourceLocation(SophisticatedStorage.MOD_ID, "item/shulker_box"));
+        ConfiguredModel[] configuredShulkerBoxModel = ConfiguredModel.builder().modelFile(new ModelFile.UncheckedModelFile(new ResourceLocation(SophisticatedStorage.MOD_ID, "block/shulker_box"))).build();
+        simpleBlockItem(ModBlocks.COPPER_SHULKER_BOX.get(), uncheckedShulkerBoxItemModel);
+        getVariantBuilder(ModBlocks.COPPER_SHULKER_BOX.get()).partialState().setModels(configuredShulkerBoxModel);
+
     }
 
     private void dynamicBlockItem(Block blockItem) {

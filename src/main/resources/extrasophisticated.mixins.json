@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "ExtraSophisticated.refmap.json",
   "mixins": [
+    "ShulkerBoxItemRendererAccessor"
   ],
   "client": [
   ],
