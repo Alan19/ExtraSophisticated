@@ -2,6 +2,7 @@ package com.alan19.extrasophisticated.blocks;
 
 import com.alan19.extrasophisticated.ExtraSophisticated;
 import com.alan19.extrasophisticated.configs.Config;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -22,11 +23,8 @@ import org.jetbrains.annotations.Nullable;
 
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ExtraSophisticated.MODID);
-    public static final RegistryObject<ChestBlock> COPPER_CHEST = BLOCKS.register("copper_chest", () -> new ExtraSophisticatedChestBlock(Config.SERVER.copperChest.inventorySlotCount, Config.SERVER.copperChest.upgradeSlotCount));
-    public static final RegistryObject<BarrelBlock> COPPER_BARREL = BLOCKS.register("copper_barrel", () -> new ExtraSophisticatedBarrelBlock(Config.SERVER.copperBarrel.inventorySlotCount, Config.SERVER.copperChest.upgradeSlotCount, BlockBehaviour.Properties.of(Material.WOOD).strength(2.5F).sound(SoundType.WOOD)));
-    public static final RegistryObject<BarrelBlock> LIMITED_COPPER_BARREL_1 = BLOCKS.register("limited_copper_barrel_1", () -> new ExtraSophisticatedLimitedBarrelBlock(1, Config.SERVER.copperLimitedBarrel1.baseSlotLimitMultiplier, Config.SERVER.copperLimitedBarrel1.upgradeSlotCount, BlockBehaviour.Properties.of(Material.WOOD).strength(2.5F).sound(SoundType.WOOD)));
-    public static final RegistryObject<BarrelBlock> LIMITED_COPPER_BARREL_2 = BLOCKS.register("limited_copper_barrel_2", () -> new ExtraSophisticatedLimitedBarrelBlock(2, Config.SERVER.copperLimitedBarrel2.baseSlotLimitMultiplier, Config.SERVER.copperLimitedBarrel2.upgradeSlotCount, BlockBehaviour.Properties.of(Material.WOOD).strength(2.5F).sound(SoundType.WOOD)));
-    public static final RegistryObject<BarrelBlock> LIMITED_COPPER_BARREL_3 = BLOCKS.register("limited_copper_barrel_3", () -> new ExtraSophisticatedLimitedBarrelBlock(3, Config.SERVER.copperLimitedBarrel3.baseSlotLimitMultiplier, Config.SERVER.copperLimitedBarrel3.upgradeSlotCount, BlockBehaviour.Properties.of(Material.WOOD).strength(2.5F).sound(SoundType.WOOD)));
-    public static final RegistryObject<BarrelBlock> LIMITED_COPPER_BARREL_4 = BLOCKS.register("limited_copper_barrel_4", () -> new ExtraSophisticatedLimitedBarrelBlock(4, Config.SERVER.copperLimitedBarrel4.baseSlotLimitMultiplier, Config.SERVER.copperLimitedBarrel4.upgradeSlotCount, BlockBehaviour.Properties.of(Material.WOOD).strength(2.5F).sound(SoundType.WOOD)));
-    public static final RegistryObject<ShulkerBoxBlock> COPPER_SHULKER_BOX = BLOCKS.register("copper_shulker_box", () -> new ExtraSophisticatedShulkerBox(Config.SERVER.copperShulkerBox.inventorySlotCount, Config.SERVER.copperShulkerBox.upgradeSlotCount));
+
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ExtraSophisticated.MODID);
+
+    public static final StorageTier COPPER = new StorageTier("copper", Config.SERVER.copper, BLOCKS, ITEMS);
 }

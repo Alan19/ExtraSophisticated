@@ -15,6 +15,6 @@ public class ModTagProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags() {
-        tag(Tags.Blocks.CHESTS).add(ModBlocks.COPPER_CHEST.get());
+        tag(Tags.Blocks.CHESTS).add(ModBlocks.COPPER.getChestBlock().get());
     }
 }

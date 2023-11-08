@@ -1,0 +1,9 @@
+{
+  "block.extrasophisticated.copper_barrel": "%s%sCopper Barrel",
+  "block.extrasophisticated.copper_chest": "%s%sCopper Chest",
+  "block.extrasophisticated.copper_shulker_box": "Copper Shulker Box",
+  "block.extrasophisticated.limited_copper_barrel_1": "Limited %s%sCopper Barrel I",
+  "block.extrasophisticated.limited_copper_barrel_2": "Limited %s%sCopper Barrel II",
+  "block.extrasophisticated.limited_copper_barrel_3": "Limited %s%sCopper Barrel III",
+  "block.extrasophisticated.limited_copper_barrel_4": "Limited %s%sCopper Barrel IV"
+}

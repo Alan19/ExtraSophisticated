@@ -22,11 +22,9 @@ public class ModBlockColors {
 
     @SubscribeEvent
     public static void registerBlockColorHandlers(RegisterColorHandlersEvent.Block event) {
-        event.register(ModBlockColors::getBarrelTintColor,
-                ModBlocks.COPPER_BARREL.get(), ModBlocks.LIMITED_COPPER_BARREL_1.get(), ModBlocks.LIMITED_COPPER_BARREL_2.get(), ModBlocks.LIMITED_COPPER_BARREL_3.get(), ModBlocks.LIMITED_COPPER_BARREL_4.get()
-        );
+        event.register(ModBlockColors::getBarrelTintColor, ModBlocks.COPPER.getBarrelsInTier());
 
-        event.register(ModBlockColors::getChestShulkerBoxColor, ModBlocks.COPPER_SHULKER_BOX.get());
+        event.register(ModBlockColors::getChestShulkerBoxColor, ModBlocks.COPPER.getShulkerBoxBlock().get());
     }
 
     private static int getBarrelTintColor(BlockState state, @Nullable BlockAndTintGetter blockDisplayReader, @Nullable BlockPos pos, int tintIndex) {

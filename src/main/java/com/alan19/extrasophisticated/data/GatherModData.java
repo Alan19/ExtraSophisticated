@@ -12,7 +12,8 @@ public class GatherModData {
     public static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
-        generator.addProvider(true, new ModBlockStateProvider(generator, existingFileHelper));
-        generator.addProvider(true, new ModTagProvider(generator, existingFileHelper));
+        generator.addProvider(event.includeClient(), new ModBlockStateProvider(generator, existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModTagProvider(generator, existingFileHelper));
+        generator.addProvider(event.includeClient(), new EnglishLocalization(generator));
     }
 }

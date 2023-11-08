@@ -177,7 +177,7 @@ public class ExtrasSophisticatedChestRenderer extends StorageRenderer<ExtraSophi
     }
 
     private Material getTierMaterial(Map<StorageTextureManager.ChestMaterial, Material> chestMaterials, Block block) {
-        if (block == ModBlocks.COPPER_CHEST.get()) {
+        if (block == ModBlocks.COPPER.getChestBlock().get()) {
             return COPPER_TIER;
         }
         return chestMaterials.get(StorageTextureManager.ChestMaterial.WOOD_TIER);
