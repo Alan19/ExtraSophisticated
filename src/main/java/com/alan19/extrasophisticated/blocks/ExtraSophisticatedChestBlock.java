@@ -36,6 +36,6 @@ public class ExtraSophisticatedChestBlock extends ChestBlock {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
-        return level.isClientSide ? createTickerHelper(blockEntityType, (BlockEntityType) ModBlockEntity.EXTRA_SOPHISTICATED_CHEST_BLOCK_ENTITY.get(), (l, p, s, be) -> ExtraSophisticatedChestBlockEntity.lidAnimateTick2((ExtraSophisticatedChestBlockEntity) be)) : super.getTicker(level, state, blockEntityType);
+        return level.isClientSide ? createTickerHelper(blockEntityType, ModBlockEntity.EXTRA_SOPHISTICATED_CHEST_BLOCK_ENTITY.get(), (l, p, s, be) -> ExtraSophisticatedChestBlockEntity.lidAnimateTick(be)) : super.getTicker(level, state, blockEntityType);
     }
 }
