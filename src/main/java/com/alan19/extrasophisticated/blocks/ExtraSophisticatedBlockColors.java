@@ -17,14 +17,15 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class ModBlockColors {
-    private ModBlockColors() {}
+public class ExtraSophisticatedBlockColors {
+    private ExtraSophisticatedBlockColors() {
+    }
 
     @SubscribeEvent
     public static void registerBlockColorHandlers(RegisterColorHandlersEvent.Block event) {
-        event.register(ModBlockColors::getBarrelTintColor, ModBlocks.COPPER.getBarrelsInTier());
+        event.register(ExtraSophisticatedBlockColors::getBarrelTintColor, ExtraSophisticatedBlocks.COPPER.getBarrelsInTier());
 
-        event.register(ModBlockColors::getChestShulkerBoxColor, ModBlocks.COPPER.getShulkerBoxBlock().get());
+        event.register(ExtraSophisticatedBlockColors::getChestShulkerBoxColor, ExtraSophisticatedBlocks.COPPER.getShulkerBoxBlock().get());
     }
 
     private static int getBarrelTintColor(BlockState state, @Nullable BlockAndTintGetter blockDisplayReader, @Nullable BlockPos pos, int tintIndex) {

@@ -1,6 +1,6 @@
 package com.alan19.extrasophisticated.items;
 
-import com.alan19.extrasophisticated.blocks.ModBlocks;
+import com.alan19.extrasophisticated.blocks.ExtraSophisticatedBlocks;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -39,6 +39,7 @@ import net.p3pp3rf1y.sophisticatedstorage.block.StorageBlockEntity;
 import net.p3pp3rf1y.sophisticatedstorage.block.StorageWrapper;
 import net.p3pp3rf1y.sophisticatedstorage.block.WoodStorageBlockEntity;
 import net.p3pp3rf1y.sophisticatedstorage.client.gui.StorageTranslationHelper;
+import net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks;
 
 import javax.annotation.Nullable;
 import java.util.Arrays;
@@ -284,16 +285,16 @@ public class ExtraSophisticatedStorageTierUpgradeItem extends ItemBase {
 
     public enum TierUpgrade {
         BASIC_TO_COPPER(new HashMap<>(new ImmutableMap.Builder<Block, TierUpgradeDefinition<?>>()
-                .put(Blocks.BARREL, new VanillaTierUpgradeDefinition<>(BarrelBlockEntity.class, blockEntity -> blockEntity.openersCounter.getOpenerCount() > 0, ModBlocks.COPPER.getBarrelBlock().get(), WoodType.SPRUCE, BlockStateProperties.FACING))
-                .put(Blocks.CHEST, new VanillaTierUpgradeDefinition<>(ChestBlockEntity.class, blockEntity -> blockEntity.openersCounter.getOpenerCount() > 0, ModBlocks.COPPER.getChestBlock().get(), WoodType.OAK, BlockStateProperties.HORIZONTAL_FACING, BlockStateProperties.WATERLOGGED))
-                .putAll(getVanillaShulkerBoxTierUpgradeDefinitions(ModBlocks.COPPER.getShulkerBoxBlock().get()))
-                .put(net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks.BARREL.get(), new StorageTierUpgradeDefinition(ModBlocks.COPPER.getBarrelBlock().get(), BlockStateProperties.FACING, StorageBlockBase.TICKING, BarrelBlock.FLAT_TOP))
-                .put(net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks.CHEST.get(), new StorageTierUpgradeDefinition(ModBlocks.COPPER.getChestBlock().get(), BlockStateProperties.HORIZONTAL_FACING, StorageBlockBase.TICKING, BlockStateProperties.WATERLOGGED))
-                .put(net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks.SHULKER_BOX.get(), new StorageTierUpgradeDefinition(ModBlocks.COPPER.getShulkerBoxBlock().get(), BlockStateProperties.FACING))
-                .put(net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks.LIMITED_BARREL_1.get(), new LimitedBarrelTierUpgradeDefinition(ModBlocks.COPPER.getLimitedBarrel1Block().get()))
-                .put(net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks.LIMITED_BARREL_2.get(), new LimitedBarrelTierUpgradeDefinition(ModBlocks.COPPER.getLimitedBarrel2Block().get()))
-                .put(net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks.LIMITED_BARREL_3.get(), new LimitedBarrelTierUpgradeDefinition(ModBlocks.COPPER.getLimitedBarrel3Block().get()))
-                .put(net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks.LIMITED_BARREL_4.get(), new LimitedBarrelTierUpgradeDefinition(ModBlocks.COPPER.getLimitedBarrel4Block().get()))
+                .put(Blocks.BARREL, new VanillaTierUpgradeDefinition<>(BarrelBlockEntity.class, blockEntity -> blockEntity.openersCounter.getOpenerCount() > 0, ExtraSophisticatedBlocks.COPPER.getBarrelBlock().get(), WoodType.SPRUCE, BlockStateProperties.FACING))
+                .put(Blocks.CHEST, new VanillaTierUpgradeDefinition<>(ChestBlockEntity.class, blockEntity -> blockEntity.openersCounter.getOpenerCount() > 0, ExtraSophisticatedBlocks.COPPER.getChestBlock().get(), WoodType.OAK, BlockStateProperties.HORIZONTAL_FACING, BlockStateProperties.WATERLOGGED))
+                .putAll(getVanillaShulkerBoxTierUpgradeDefinitions(ExtraSophisticatedBlocks.COPPER.getShulkerBoxBlock().get()))
+                .put(ModBlocks.BARREL.get(), new StorageTierUpgradeDefinition(ExtraSophisticatedBlocks.COPPER.getBarrelBlock().get(), BlockStateProperties.FACING, StorageBlockBase.TICKING, BarrelBlock.FLAT_TOP))
+                .put(ModBlocks.CHEST.get(), new StorageTierUpgradeDefinition(ExtraSophisticatedBlocks.COPPER.getChestBlock().get(), BlockStateProperties.HORIZONTAL_FACING, StorageBlockBase.TICKING, BlockStateProperties.WATERLOGGED))
+                .put(ModBlocks.SHULKER_BOX.get(), new StorageTierUpgradeDefinition(ExtraSophisticatedBlocks.COPPER.getShulkerBoxBlock().get(), BlockStateProperties.FACING))
+                .put(ModBlocks.LIMITED_BARREL_1.get(), new LimitedBarrelTierUpgradeDefinition(ExtraSophisticatedBlocks.COPPER.getLimitedBarrel1Block().get()))
+                .put(ModBlocks.LIMITED_BARREL_2.get(), new LimitedBarrelTierUpgradeDefinition(ExtraSophisticatedBlocks.COPPER.getLimitedBarrel2Block().get()))
+                .put(ModBlocks.LIMITED_BARREL_3.get(), new LimitedBarrelTierUpgradeDefinition(ExtraSophisticatedBlocks.COPPER.getLimitedBarrel3Block().get()))
+                .put(ModBlocks.LIMITED_BARREL_4.get(), new LimitedBarrelTierUpgradeDefinition(ExtraSophisticatedBlocks.COPPER.getLimitedBarrel4Block().get()))
                 .build()));
 
         private final Map<Block, TierUpgradeDefinition<?>> blockUpgradeDefinitions;

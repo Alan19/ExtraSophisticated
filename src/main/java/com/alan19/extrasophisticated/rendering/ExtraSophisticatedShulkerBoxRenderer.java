@@ -2,7 +2,7 @@ package com.alan19.extrasophisticated.rendering;
 
 import com.alan19.extrasophisticated.ExtraSophisticated;
 import com.alan19.extrasophisticated.blocks.ExtraSophisticatedShulkerBoxBlockEntity;
-import com.alan19.extrasophisticated.blocks.ModBlocks;
+import com.alan19.extrasophisticated.blocks.ExtraSophisticatedBlocks;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Vector3f;
@@ -113,7 +113,7 @@ public class ExtraSophisticatedShulkerBoxRenderer extends StorageRenderer<ExtraS
     }
 
     private Material getTierMaterial(Block block) {
-        if (block == ModBlocks.COPPER.getShulkerBoxBlock().get()) {
+        if (block == ExtraSophisticatedBlocks.COPPER.getShulkerBoxBlock().get()) {
             return COPPER_TIER_MATERIAL;
         }
         return ShulkerBoxRenderer.BASE_TIER_MATERIAL;

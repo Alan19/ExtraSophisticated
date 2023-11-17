@@ -6,14 +6,10 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.client.extensions.common.IClientBlockExtensions;
 import net.p3pp3rf1y.sophisticatedstorage.block.ShulkerBoxBlock;
-import net.p3pp3rf1y.sophisticatedstorage.block.ShulkerBoxBlockEntity;
 import net.p3pp3rf1y.sophisticatedstorage.block.StorageBlockEntity;
-import net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 public class ExtraSophisticatedShulkerBox extends ShulkerBoxBlock {
@@ -28,7 +24,7 @@ public class ExtraSophisticatedShulkerBox extends ShulkerBoxBlock {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
-        return createTickerHelper(blockEntityType, ModBlockEntity.EXTRA_SOPHISTICATED_SHULKER_BOX_BLOCK_ENTITY.get(), (l, pos, s, blockEntity) -> {
+        return createTickerHelper(blockEntityType, ExtraSophisticatedBlockEntity.EXTRA_SOPHISTICATED_SHULKER_BOX_BLOCK_ENTITY.get(), (l, pos, s, blockEntity) -> {
             ExtraSophisticatedShulkerBoxBlockEntity.tick(l, pos, s, blockEntity);
             if (!l.isClientSide) {
                 StorageBlockEntity.serverTick(l, pos, blockEntity);
@@ -38,11 +34,11 @@ public class ExtraSophisticatedShulkerBox extends ShulkerBoxBlock {
 
     @Override
     protected BlockEntityType<? extends StorageBlockEntity> getBlockEntityType() {
-        return ModBlockEntity.EXTRA_SOPHISTICATED_SHULKER_BOX_BLOCK_ENTITY.get();
+        return ExtraSophisticatedBlockEntity.EXTRA_SOPHISTICATED_SHULKER_BOX_BLOCK_ENTITY.get();
     }
 
     @Override
     public StorageBlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return ModBlockEntity.EXTRA_SOPHISTICATED_SHULKER_BOX_BLOCK_ENTITY.get().create(pos, state);
+        return ExtraSophisticatedBlockEntity.EXTRA_SOPHISTICATED_SHULKER_BOX_BLOCK_ENTITY.get().create(pos, state);
     }
 }

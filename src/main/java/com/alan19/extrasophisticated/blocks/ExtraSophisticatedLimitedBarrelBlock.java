@@ -17,11 +17,11 @@ public class ExtraSophisticatedLimitedBarrelBlock extends LimitedBarrelBlock {
     @Nullable
     @Override
     public StorageBlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return ModBlockEntity.EXTRA_SOPHISTICATED_LIMITED_BARREL_BLOCK_ENTITY.get().create(pos, state);
+        return ExtraSophisticatedBlockEntity.EXTRA_SOPHISTICATED_LIMITED_BARREL_BLOCK_ENTITY.get().create(pos, state);
     }
 
     @Override
     protected BlockEntityType<? extends StorageBlockEntity> getBlockEntityType() {
-        return ModBlockEntity.EXTRA_SOPHISTICATED_LIMITED_BARREL_BLOCK_ENTITY.get();
+        return ExtraSophisticatedBlockEntity.EXTRA_SOPHISTICATED_LIMITED_BARREL_BLOCK_ENTITY.get();
     }
 }

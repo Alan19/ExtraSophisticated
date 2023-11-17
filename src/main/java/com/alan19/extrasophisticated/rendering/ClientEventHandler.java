@@ -1,7 +1,7 @@
 package com.alan19.extrasophisticated.rendering;
 
 import com.alan19.extrasophisticated.ExtraSophisticated;
-import com.alan19.extrasophisticated.blocks.ModBlockEntity;
+import com.alan19.extrasophisticated.blocks.ExtraSophisticatedBlockEntity;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.resources.ResourceLocation;
@@ -27,10 +27,10 @@ public class ClientEventHandler {
     }
 
     private static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerBlockEntityRenderer(ModBlockEntity.EXTRA_SOPHISTICATED_CHEST_BLOCK_ENTITY.get(), ExtrasSophisticatedChestRenderer::new);
-        event.registerBlockEntityRenderer(ModBlockEntity.EXTRA_SOPHISTICATED_BARREL_BLOCK_ENTITY.get(), pContext -> new BarrelRenderer<>());
-        event.registerBlockEntityRenderer(ModBlockEntity.EXTRA_SOPHISTICATED_LIMITED_BARREL_BLOCK_ENTITY.get(), pContext -> new LimitedBarrelRenderer());
-        event.registerBlockEntityRenderer(ModBlockEntity.EXTRA_SOPHISTICATED_SHULKER_BOX_BLOCK_ENTITY.get(), ExtraSophisticatedShulkerBoxRenderer::new);
+        event.registerBlockEntityRenderer(ExtraSophisticatedBlockEntity.EXTRA_SOPHISTICATED_CHEST_BLOCK_ENTITY.get(), ExtrasSophisticatedChestRenderer::new);
+        event.registerBlockEntityRenderer(ExtraSophisticatedBlockEntity.EXTRA_SOPHISTICATED_BARREL_BLOCK_ENTITY.get(), pContext -> new BarrelRenderer<>());
+        event.registerBlockEntityRenderer(ExtraSophisticatedBlockEntity.EXTRA_SOPHISTICATED_LIMITED_BARREL_BLOCK_ENTITY.get(), pContext -> new LimitedBarrelRenderer());
+        event.registerBlockEntityRenderer(ExtraSophisticatedBlockEntity.EXTRA_SOPHISTICATED_SHULKER_BOX_BLOCK_ENTITY.get(), ExtraSophisticatedShulkerBoxRenderer::new);
     }
 
 

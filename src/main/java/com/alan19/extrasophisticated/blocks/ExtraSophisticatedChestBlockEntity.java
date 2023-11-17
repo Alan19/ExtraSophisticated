@@ -13,6 +13,6 @@ public class ExtraSophisticatedChestBlockEntity extends ChestBlockEntity {
 
     @Override
     public BlockEntityType<?> getType() {
-        return ModBlockEntity.EXTRA_SOPHISTICATED_CHEST_BLOCK_ENTITY.get();
+        return ExtraSophisticatedBlockEntity.EXTRA_SOPHISTICATED_CHEST_BLOCK_ENTITY.get();
     }
 }

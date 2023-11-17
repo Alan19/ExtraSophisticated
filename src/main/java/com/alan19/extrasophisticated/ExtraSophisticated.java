@@ -1,7 +1,7 @@
 package com.alan19.extrasophisticated;
 
-import com.alan19.extrasophisticated.blocks.ModBlockEntity;
-import com.alan19.extrasophisticated.blocks.ModBlocks;
+import com.alan19.extrasophisticated.blocks.ExtraSophisticatedBlockEntity;
+import com.alan19.extrasophisticated.blocks.ExtraSophisticatedBlocks;
 import com.alan19.extrasophisticated.configs.Config;
 import com.alan19.extrasophisticated.rendering.ClientEventHandler;
 import com.mojang.logging.LogUtils;
@@ -31,9 +31,9 @@ public class ExtraSophisticated {
 
         modEventBus.addListener(this::commonSetup);
 
-        ModBlocks.BLOCKS.register(modEventBus);
-        ModBlocks.ITEMS.register(modEventBus);
-        ModBlockEntity.BLOCK_ENTITY_TYPES.register(modEventBus);
+        ExtraSophisticatedBlocks.BLOCKS.register(modEventBus);
+        ExtraSophisticatedBlocks.ITEMS.register(modEventBus);
+        ExtraSophisticatedBlockEntity.BLOCK_ENTITY_TYPES.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
         ClientEventHandler.registerHandlers();

@@ -12,6 +12,6 @@ public class ExtraSophisticatedShulkerBoxBlockEntity extends ShulkerBoxBlockEnti
 
     @Override
     public BlockEntityType<?> getType() {
-        return ModBlockEntity.EXTRA_SOPHISTICATED_SHULKER_BOX_BLOCK_ENTITY.get();
+        return ExtraSophisticatedBlockEntity.EXTRA_SOPHISTICATED_SHULKER_BOX_BLOCK_ENTITY.get();
     }
 }

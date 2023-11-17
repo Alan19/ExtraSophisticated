@@ -1,8 +1,8 @@
 package com.alan19.extrasophisticated.rendering;
 
 import com.alan19.extrasophisticated.ExtraSophisticated;
+import com.alan19.extrasophisticated.blocks.ExtraSophisticatedBlocks;
 import com.alan19.extrasophisticated.blocks.ExtraSophisticatedChestBlockEntity;
-import com.alan19.extrasophisticated.blocks.ModBlocks;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Vector3f;
@@ -177,7 +177,7 @@ public class ExtrasSophisticatedChestRenderer extends StorageRenderer<ExtraSophi
     }
 
     private Material getTierMaterial(Map<StorageTextureManager.ChestMaterial, Material> chestMaterials, Block block) {
-        if (block == ModBlocks.COPPER.getChestBlock().get()) {
+        if (block == ExtraSophisticatedBlocks.COPPER.getChestBlock().get()) {
             return COPPER_TIER;
         }
         return chestMaterials.get(StorageTextureManager.ChestMaterial.WOOD_TIER);

@@ -12,6 +12,6 @@ public class ExtraSophisticatedLimitedBarrelBlockEntity extends LimitedBarrelBlo
 
     @Override
     public BlockEntityType<?> getType() {
-        return ModBlockEntity.EXTRA_SOPHISTICATED_LIMITED_BARREL_BLOCK_ENTITY.get();
+        return ExtraSophisticatedBlockEntity.EXTRA_SOPHISTICATED_LIMITED_BARREL_BLOCK_ENTITY.get();
     }
 }

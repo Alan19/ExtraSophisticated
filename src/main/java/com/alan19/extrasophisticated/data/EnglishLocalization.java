@@ -1,7 +1,7 @@
 package com.alan19.extrasophisticated.data;
 
 import com.alan19.extrasophisticated.ExtraSophisticated;
-import com.alan19.extrasophisticated.blocks.ModBlocks;
+import com.alan19.extrasophisticated.blocks.ExtraSophisticatedBlocks;
 import com.alan19.extrasophisticated.blocks.StorageTier;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -13,7 +13,7 @@ public class EnglishLocalization extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        add(ModBlocks.COPPER);
+        add(ExtraSophisticatedBlocks.COPPER);
     }
 
     private void add(StorageTier tier) {

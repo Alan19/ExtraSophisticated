@@ -1,15 +1,14 @@
 package com.alan19.extrasophisticated.items;
 
-import com.alan19.extrasophisticated.blocks.ModBlocks;
-import net.minecraft.world.level.block.Block;
+import com.alan19.extrasophisticated.blocks.ExtraSophisticatedBlocks;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.p3pp3rf1y.sophisticatedstorage.item.StorageBlockItem;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class ModItemColors {
-    private ModItemColors() {}
+public class ExtraSophisticatedItemColors {
+    private ExtraSophisticatedItemColors() {}
 
     @SubscribeEvent
     public static void registerItemColorHandlers(RegisterColorHandlersEvent.Item event) {
@@ -23,7 +22,7 @@ public class ModItemColors {
                         return StorageBlockItem.getAccentColorFromStack(stack).orElse(-1);
                     }
                 },
-                ModBlocks.COPPER.getBarrelsInTier()
+                ExtraSophisticatedBlocks.COPPER.getBarrelsInTier()
         );
     }
 }
