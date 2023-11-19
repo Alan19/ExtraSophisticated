@@ -37,7 +37,6 @@ public class ExtraSophisticatedBlockStateProvider extends BlockStateProvider {
         ConfiguredModel[] configuredShulkerBoxModel = ConfiguredModel.builder().modelFile(new ModelFile.UncheckedModelFile(new ResourceLocation(SophisticatedStorage.MOD_ID, "block/shulker_box"))).build();
         simpleBlockItem(ExtraSophisticatedBlocks.COPPER.getShulkerBoxBlock().get(), uncheckedShulkerBoxItemModel);
         getVariantBuilder(ExtraSophisticatedBlocks.COPPER.getShulkerBoxBlock().get()).partialState().setModels(configuredShulkerBoxModel);
-
     }
 
     private void dynamicBlockItem(Block blockItem, BarrelBlock barrel) {

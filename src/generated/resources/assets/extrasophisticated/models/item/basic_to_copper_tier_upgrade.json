@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "extrasophisticated:item/basic_to_copper_tier_upgrade"
+  }
+}

@@ -1,9 +1,11 @@
 package com.alan19.extrasophisticated.blocks;
 
 import com.alan19.extrasophisticated.configs.StorageTierConfig;
+import com.alan19.extrasophisticated.data.IStorageTier;
 import com.alan19.extrasophisticated.items.ExtraSophisticatedChestItem;
 import com.alan19.extrasophisticated.items.ExtraSophisticatedShulkerBoxItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -12,7 +14,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.p3pp3rf1y.sophisticatedstorage.item.BarrelBlockItem;
 
-public class StorageTier {
+import java.util.function.Supplier;
+
+public class StorageTier implements IStorageTier {
     public static final BlockBehaviour.Properties STORAGE_PROPERTIES = BlockBehaviour.Properties.of(Material.WOOD).strength(2.5F).sound(SoundType.WOOD);
     private final RegistryObject<ExtraSophisticatedChestBlock> chestBlock;
     private final RegistryObject<ExtraSophisticatedBarrelBlock> barrelBlock;
@@ -28,13 +32,15 @@ public class StorageTier {
     private final RegistryObject<BarrelBlockItem> limitedBarrel3Item;
     private final RegistryObject<BarrelBlockItem> limitedBarrel4Item;
     private final RegistryObject<ExtraSophisticatedShulkerBoxItem> shulkerBoxItem;
+    private final Supplier<Ingredient> ingredient;
     private final String name;
-
     public StorageTier(String name,
                        StorageTierConfig config,
                        DeferredRegister<Block> blockDeferredRegister,
-                       DeferredRegister<Item> itemDeferredRegister) {
+                       DeferredRegister<Item> itemDeferredRegister,
+                       Supplier<Ingredient> ingredient) {
         this.name = name;
+        this.ingredient = ingredient;
         chestBlock = blockDeferredRegister.register(name + "_chest", () -> new ExtraSophisticatedChestBlock(config.getBarrel().inventorySlotCount, config.getChest().upgradeSlotCount));
         shulkerBoxBlock = blockDeferredRegister.register(name + "_shulker_box", () -> new ExtraSophisticatedShulkerBox(config.getShulkerBox().inventorySlotCount, config.getShulkerBox().upgradeSlotCount));
         barrelBlock = blockDeferredRegister.register(name + "_barrel", () -> new ExtraSophisticatedBarrelBlock(config.getBarrel().inventorySlotCount, config.getBarrel().upgradeSlotCount, STORAGE_PROPERTIES));
@@ -50,6 +56,10 @@ public class StorageTier {
         limitedBarrel3Item = itemDeferredRegister.register("limited_" + name + "_barrel_3", () -> new BarrelBlockItem(getLimitedBarrel3Block().get()));
         limitedBarrel4Item = itemDeferredRegister.register("limited_" + name + "_barrel_4", () -> new BarrelBlockItem(getLimitedBarrel4Block().get()));
         shulkerBoxItem = itemDeferredRegister.register(name + "_shulker_box", () -> new ExtraSophisticatedShulkerBoxItem(getShulkerBoxBlock().get()));
+    }
+
+    public Supplier<Ingredient> getIngredient() {
+        return ingredient;
     }
 
     public RegistryObject<ExtraSophisticatedChestBlock> getChestBlock() {
@@ -108,6 +118,7 @@ public class StorageTier {
         return shulkerBoxItem;
     }
 
+    @Override
     public Block[] getBlocksInTier() {
         return new Block[]{chestBlock.get(), barrelBlock.get(), limitedBarrel1Block.get(), limitedBarrel2Block.get(), limitedBarrel3Block.get(), limitedBarrel4Block.get(), shulkerBoxBlock.get()};
     }

@@ -40,6 +40,7 @@ import net.p3pp3rf1y.sophisticatedstorage.block.StorageWrapper;
 import net.p3pp3rf1y.sophisticatedstorage.block.WoodStorageBlockEntity;
 import net.p3pp3rf1y.sophisticatedstorage.client.gui.StorageTranslationHelper;
 import net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks;
+import net.p3pp3rf1y.sophisticatedstorage.item.StorageTierUpgradeItem;
 
 import javax.annotation.Nullable;
 import java.util.Arrays;
@@ -48,6 +49,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.Predicate;
+
 public class ExtraSophisticatedStorageTierUpgradeItem extends ItemBase {
     private final TierUpgrade tier;
     private final boolean hasTooltip;
@@ -168,7 +170,9 @@ public class ExtraSophisticatedStorageTierUpgradeItem extends ItemBase {
             this.color = color;
         }
 
-        public @Nullable WoodType woodType() {return woodType;}
+        public @Nullable WoodType woodType() {
+            return woodType;
+        }
 
         @Override
         boolean upgradeStorage(@Nullable Player player, BlockPos pos, Level level, BlockState state, B be) {
@@ -238,13 +242,21 @@ public class ExtraSophisticatedStorageTierUpgradeItem extends ItemBase {
             this.newBlock = newBlock;
         }
 
-        public List<Property<?>> getPropertiesToCopy() {return propertiesToCopy;}
+        public List<Property<?>> getPropertiesToCopy() {
+            return propertiesToCopy;
+        }
 
-        public Class<B> blockEntityClass() {return blockEntityClass;}
+        public Class<B> blockEntityClass() {
+            return blockEntityClass;
+        }
 
-        public Predicate<B> isUpgradingBlocked() {return isUpgradingBlocked;}
+        public Predicate<B> isUpgradingBlocked() {
+            return isUpgradingBlocked;
+        }
 
-        public StorageBlockBase newBlock() {return newBlock;}
+        public StorageBlockBase newBlock() {
+            return newBlock;
+        }
 
         abstract boolean upgradeStorage(@Nullable Player player, BlockPos pos, Level level, BlockState state, B b);
 
@@ -295,11 +307,32 @@ public class ExtraSophisticatedStorageTierUpgradeItem extends ItemBase {
                 .put(ModBlocks.LIMITED_BARREL_2.get(), new LimitedBarrelTierUpgradeDefinition(ExtraSophisticatedBlocks.COPPER.getLimitedBarrel2Block().get()))
                 .put(ModBlocks.LIMITED_BARREL_3.get(), new LimitedBarrelTierUpgradeDefinition(ExtraSophisticatedBlocks.COPPER.getLimitedBarrel3Block().get()))
                 .put(ModBlocks.LIMITED_BARREL_4.get(), new LimitedBarrelTierUpgradeDefinition(ExtraSophisticatedBlocks.COPPER.getLimitedBarrel4Block().get()))
-                .build()));
+                .build())),
+        COPPER_TO_IRON(Map.of(
+                ExtraSophisticatedBlocks.COPPER.getBarrelBlock().get(), new StorageTierUpgradeDefinition((StorageBlockBase) ModBlocks.IRON_BARREL.get(), BlockStateProperties.FACING, StorageBlockBase.TICKING, BarrelBlock.FLAT_TOP),
+                ExtraSophisticatedBlocks.COPPER.getChestBlock().get(), new StorageTierUpgradeDefinition((StorageBlockBase) ModBlocks.IRON_CHEST.get(), BlockStateProperties.HORIZONTAL_FACING, StorageBlockBase.TICKING, BlockStateProperties.WATERLOGGED),
+                ExtraSophisticatedBlocks.COPPER.getShulkerBoxBlock().get(), new StorageTierUpgradeDefinition((StorageBlockBase) ModBlocks.IRON_SHULKER_BOX.get(), BlockStateProperties.FACING),
+                ExtraSophisticatedBlocks.COPPER.getLimitedBarrel1Block().get(), new LimitedBarrelTierUpgradeDefinition((StorageBlockBase) ModBlocks.LIMITED_IRON_BARREL_1.get()),
+                ExtraSophisticatedBlocks.COPPER.getLimitedBarrel2Block().get(), new LimitedBarrelTierUpgradeDefinition((StorageBlockBase) ModBlocks.LIMITED_IRON_BARREL_2.get()),
+                ExtraSophisticatedBlocks.COPPER.getLimitedBarrel3Block().get(), new LimitedBarrelTierUpgradeDefinition((StorageBlockBase) ModBlocks.LIMITED_IRON_BARREL_3.get()),
+                ExtraSophisticatedBlocks.COPPER.getLimitedBarrel4Block().get(), new LimitedBarrelTierUpgradeDefinition((StorageBlockBase) ModBlocks.LIMITED_IRON_BARREL_4.get())
+        )),
+        COPPER_TO_GOLD(Map.of(
+                ExtraSophisticatedBlocks.COPPER.getBarrelBlock().get(), new StorageTierUpgradeDefinition((StorageBlockBase) ModBlocks.GOLD_BARREL.get(), BlockStateProperties.FACING, StorageBlockBase.TICKING, BarrelBlock.FLAT_TOP),
+                ExtraSophisticatedBlocks.COPPER.getChestBlock().get(), new StorageTierUpgradeDefinition((StorageBlockBase) ModBlocks.GOLD_CHEST.get(), BlockStateProperties.HORIZONTAL_FACING, StorageBlockBase.TICKING, BlockStateProperties.WATERLOGGED),
+                ExtraSophisticatedBlocks.COPPER.getShulkerBoxBlock().get(), new StorageTierUpgradeDefinition((StorageBlockBase) ModBlocks.GOLD_SHULKER_BOX.get(), BlockStateProperties.FACING),
+                ExtraSophisticatedBlocks.COPPER.getLimitedBarrel1Block().get(), new LimitedBarrelTierUpgradeDefinition((StorageBlockBase) ModBlocks.LIMITED_GOLD_BARREL_1.get()),
+                ExtraSophisticatedBlocks.COPPER.getLimitedBarrel2Block().get(), new LimitedBarrelTierUpgradeDefinition((StorageBlockBase) ModBlocks.LIMITED_GOLD_BARREL_2.get()),
+                ExtraSophisticatedBlocks.COPPER.getLimitedBarrel3Block().get(), new LimitedBarrelTierUpgradeDefinition((StorageBlockBase) ModBlocks.LIMITED_GOLD_BARREL_3.get()),
+                ExtraSophisticatedBlocks.COPPER.getLimitedBarrel4Block().get(), new LimitedBarrelTierUpgradeDefinition((StorageBlockBase) ModBlocks.LIMITED_GOLD_BARREL_4.get())
+        ));
+
 
         private final Map<Block, TierUpgradeDefinition<?>> blockUpgradeDefinitions;
 
-        TierUpgrade(Map<Block, TierUpgradeDefinition<?>> blockUpgradeDefinitions) {this.blockUpgradeDefinitions = blockUpgradeDefinitions;}
+        TierUpgrade(Map<Block, TierUpgradeDefinition<?>> blockUpgradeDefinitions) {
+            this.blockUpgradeDefinitions = blockUpgradeDefinitions;
+        }
 
         public void addTierUpgradeDefinition(Block block, TierUpgradeDefinition<?> tierUpgradeDefinition) {
             blockUpgradeDefinitions.put(block, tierUpgradeDefinition);
@@ -308,4 +341,5 @@ public class ExtraSophisticatedStorageTierUpgradeItem extends ItemBase {
         public Optional<TierUpgradeDefinition<?>> getBlockUpgradeDefinition(Block block) {
             return Optional.ofNullable(blockUpgradeDefinitions.get(block));
         }
-    }}
+    }
+}

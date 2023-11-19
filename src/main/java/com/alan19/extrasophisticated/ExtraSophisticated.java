@@ -26,7 +26,7 @@ public class ExtraSophisticated {
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public ExtraSophisticated() {
-        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Config.SERVER_SPEC);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, Config.SERVER_SPEC);
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         modEventBus.addListener(this::commonSetup);

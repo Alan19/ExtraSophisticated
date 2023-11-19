@@ -5,5 +5,8 @@
   "block.extrasophisticated.limited_copper_barrel_1": "Limited %s%sCopper Barrel I",
   "block.extrasophisticated.limited_copper_barrel_2": "Limited %s%sCopper Barrel II",
   "block.extrasophisticated.limited_copper_barrel_3": "Limited %s%sCopper Barrel III",
-  "block.extrasophisticated.limited_copper_barrel_4": "Limited %s%sCopper Barrel IV"
+  "block.extrasophisticated.limited_copper_barrel_4": "Limited %s%sCopper Barrel IV",
+  "item.extrasophisticated.basic_to_copper_tier_upgrade": "Wood to Copper Tier Upgrade",
+  "item.extrasophisticated.copper_to_gold_tier_upgrade": "Copper to Gold Tier Upgrade",
+  "item.extrasophisticated.copper_to_iron_tier_upgrade": "Copper to Iron Tier Upgrade"
 }

@@ -15,5 +15,7 @@ public class GatherModData {
         generator.addProvider(event.includeClient(), new ExtraSophisticatedBlockStateProvider(generator, existingFileHelper));
         generator.addProvider(event.includeServer(), new ExtraSophisticatedTagProvider(generator, existingFileHelper));
         generator.addProvider(event.includeClient(), new EnglishLocalization(generator));
+        generator.addProvider(event.includeServer(), new ExtraSophisticatedRecipeProvider(generator));
+        generator.addProvider(event.includeClient(), new ExtraSophisticatedItemModels(generator, existingFileHelper));
     }
 }
