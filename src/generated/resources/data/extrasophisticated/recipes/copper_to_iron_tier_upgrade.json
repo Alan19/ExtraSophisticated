@@ -15,9 +15,9 @@
     }
   },
   "pattern": [
-    " S ",
+    "   ",
     "SRS",
-    " S "
+    "   "
   ],
   "result": {
     "item": "extrasophisticated:copper_to_iron_tier_upgrade"

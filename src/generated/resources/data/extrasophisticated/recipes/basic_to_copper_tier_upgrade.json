@@ -15,9 +15,9 @@
     }
   },
   "pattern": [
-    "SSS",
+    "S S",
     "SRS",
-    "SSS"
+    "S S"
   ],
   "result": {
     "item": "extrasophisticated:basic_to_copper_tier_upgrade"

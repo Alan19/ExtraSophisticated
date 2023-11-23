@@ -15,6 +15,6 @@ public class ExtraSophisticatedItemModels extends ItemModelProvider {
     protected void registerModels() {
         basicItem(ExtraSophisticatedBlocks.BASIC_TO_COPPER_TIER_UPGRADE.get());
         basicItem(ExtraSophisticatedBlocks.COPPER_TO_IRON_TIER_UPGRADE.get());
-        basicItem(ExtraSophisticatedBlocks.COPPER_TO_GOLD_TIER_UPGRADE.get());
+//        basicItem(ExtraSophisticatedBlocks.COPPER_TO_GOLD_TIER_UPGRADE.get());
     }
 }

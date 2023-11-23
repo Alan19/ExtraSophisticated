@@ -27,6 +27,6 @@ public class EnglishLocalization extends LanguageProvider {
         add(tier.getShulkerBoxBlock().get(), name + " Shulker Box");
         add(ExtraSophisticatedBlocks.BASIC_TO_COPPER_TIER_UPGRADE.get(), "Wood to Copper Tier Upgrade");
         add(ExtraSophisticatedBlocks.COPPER_TO_IRON_TIER_UPGRADE.get(), "Copper to Iron Tier Upgrade");
-        add(ExtraSophisticatedBlocks.COPPER_TO_GOLD_TIER_UPGRADE.get(), "Copper to Gold Tier Upgrade");
+//        add(ExtraSophisticatedBlocks.COPPER_TO_GOLD_TIER_UPGRADE.get(), "Copper to Gold Tier Upgrade");
     }
 }

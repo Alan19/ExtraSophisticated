@@ -22,7 +22,7 @@ public class Config {
 
         public Server(ForgeConfigSpec.Builder builder) {
             builder.comment("Server Settings").push("server");
-            copper = new StorageTierConfig(builder, "Copper", 45, 1, 48);
+            copper = new StorageTierConfig(builder, "Copper", 54, 1, 48);
         }
 
     }

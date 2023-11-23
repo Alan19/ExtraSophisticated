@@ -37,13 +37,14 @@ public class ExtraSophisticatedRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> pFinishedRecipeConsumer) {
-        addStorageTierUpgradeRecipesForTier(pFinishedRecipeConsumer, ExtraSophisticatedBlocks.COPPER, WOOD);
-        addTierUpgradeItemRecipe8(pFinishedRecipeConsumer, ExtraSophisticatedBlocks.BASIC_TO_COPPER_TIER_UPGRADE.get(), ExtraSophisticatedBlocks.COPPER.getIngredient().get());
-        addTierUpgradeItemRecipe4(pFinishedRecipeConsumer, ExtraSophisticatedBlocks.COPPER_TO_IRON_TIER_UPGRADE.get(), Ingredient.of(Tags.Items.INGOTS_IRON));
-        addTierUpgradeItemRecipe8(pFinishedRecipeConsumer, ExtraSophisticatedBlocks.COPPER_TO_GOLD_TIER_UPGRADE.get(), Ingredient.of(Tags.Items.INGOTS_GOLD));
+        addStorageTierUpgradeRecipesForTierUsing6Ingredients(pFinishedRecipeConsumer, ExtraSophisticatedBlocks.COPPER, WOOD);
+        // TODO Add recipe to upgrade copper to iron
+        addTierUpgradeItemRecipeUsing6Ingredients(pFinishedRecipeConsumer, ExtraSophisticatedBlocks.BASIC_TO_COPPER_TIER_UPGRADE.get(), ExtraSophisticatedBlocks.COPPER.getIngredient().get());
+        addTierUpgradeItemRecipeUsing2Ingredients(pFinishedRecipeConsumer, ExtraSophisticatedBlocks.COPPER_TO_IRON_TIER_UPGRADE.get(), Ingredient.of(Tags.Items.INGOTS_IRON));
+//        addTierUpgradeItemRecipe8(pFinishedRecipeConsumer, ExtraSophisticatedBlocks.COPPER_TO_GOLD_TIER_UPGRADE.get(), Ingredient.of(Tags.Items.INGOTS_GOLD));
     }
 
-    private void addTierUpgradeItemRecipe4(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, Ingredient ingredient) {
+    private void addTierUpgradeItemRecipeUsing4Ingredients(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, Ingredient ingredient) {
         ShapeBasedRecipeBuilder.shaped(result)
                 .pattern(" S ")
                 .pattern("SRS")
@@ -54,7 +55,29 @@ public class ExtraSophisticatedRecipeProvider extends RecipeProvider {
                 .save(pFinishedRecipeConsumer);
     }
 
-    private void addTierUpgradeItemRecipe8(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, Ingredient ingredient) {
+    private void addTierUpgradeItemRecipeUsing2Ingredients(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, Ingredient ingredient) {
+        ShapeBasedRecipeBuilder.shaped(result)
+                .pattern("   ")
+                .pattern("SRS")
+                .pattern("   ")
+                .define('R', Items.REDSTONE_TORCH)
+                .define('S', ingredient)
+                .unlockedBy(HAS_REDSTONE_TORCH_CRITERION_NAME, has(Items.REDSTONE_TORCH))
+                .save(pFinishedRecipeConsumer);
+    }
+
+    private void addTierUpgradeItemRecipeUsing6Ingredients(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, Ingredient ingredient) {
+        ShapeBasedRecipeBuilder.shaped(result)
+                .pattern("S S")
+                .pattern("SRS")
+                .pattern("S S")
+                .define('R', Items.REDSTONE_TORCH)
+                .define('S', ingredient)
+                .unlockedBy(HAS_REDSTONE_TORCH_CRITERION_NAME, has(Items.REDSTONE_TORCH))
+                .save(pFinishedRecipeConsumer);
+    }
+
+    private void addTierUpgradeItemRecipeUsing8Ingredients(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, Ingredient ingredient) {
         ShapeBasedRecipeBuilder.shaped(result)
                 .pattern("SSS")
                 .pattern("SRS")
@@ -65,18 +88,32 @@ public class ExtraSophisticatedRecipeProvider extends RecipeProvider {
                 .save(pFinishedRecipeConsumer);
     }
 
-    public void addStorageTierUpgradeRecipesForTier(Consumer<FinishedRecipe> consumer, StorageTier tier, IStorageTier baseTier) {
+    public void addStorageTierUpgradeRecipesForTierUsing6Ingredients(Consumer<FinishedRecipe> consumer, StorageTier tier, IStorageTier baseTier) {
         IntStream.range(0, tier.getBlocksInTier().length)
                 .mapToObj(value -> Pair.of(tier.getBlocksInTier()[value], baseTier.getBlocksInTier()[value]))
                 .toList()
                 .forEach(blockPair -> ShapeBasedRecipeBuilder.shaped(blockPair.getKey(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
-                .pattern("III")
+                .pattern("I I")
                 .pattern("ISI")
-                .pattern("III")
+                .pattern("I I")
                 .define('I', tier.getIngredient().get())
                 .define('S', blockPair.getValue())
                 .unlockedBy("has_" + RegistryHelper.getItemKey(blockPair.getRight().asItem()).getPath(), has(blockPair.getRight().asItem()))
                 .save(consumer));
+    }
+
+    public void addStorageTierUpgradeRecipesForTierUsing2Ingredients(Consumer<FinishedRecipe> consumer, StorageTier tier, IStorageTier baseTier) {
+        IntStream.range(0, tier.getBlocksInTier().length)
+                .mapToObj(value -> Pair.of(tier.getBlocksInTier()[value], baseTier.getBlocksInTier()[value]))
+                .toList()
+                .forEach(blockPair -> ShapeBasedRecipeBuilder.shaped(blockPair.getKey(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
+                        .pattern("   ")
+                        .pattern("ISI")
+                        .pattern("   ")
+                        .define('I', tier.getIngredient().get())
+                        .define('S', blockPair.getValue())
+                        .unlockedBy("has_" + RegistryHelper.getItemKey(blockPair.getRight().asItem()).getPath(), has(blockPair.getRight().asItem()))
+                        .save(consumer));
     }
 
 
