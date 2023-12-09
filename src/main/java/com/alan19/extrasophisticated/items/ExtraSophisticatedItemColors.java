@@ -6,11 +6,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.p3pp3rf1y.sophisticatedstorage.item.StorageBlockItem;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ExtraSophisticatedItemColors {
-    private ExtraSophisticatedItemColors() {}
-
-    @SubscribeEvent
     public static void registerItemColorHandlers(RegisterColorHandlersEvent.Item event) {
         event.register((stack, tintIndex) -> {
                     if (tintIndex < 1000 || tintIndex > 1001) {

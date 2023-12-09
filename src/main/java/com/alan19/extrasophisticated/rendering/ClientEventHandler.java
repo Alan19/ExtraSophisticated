@@ -1,7 +1,9 @@
 package com.alan19.extrasophisticated.rendering;
 
 import com.alan19.extrasophisticated.ExtraSophisticated;
+import com.alan19.extrasophisticated.blocks.ExtraSophisticatedBlockColors;
 import com.alan19.extrasophisticated.blocks.ExtraSophisticatedBlockEntity;
+import com.alan19.extrasophisticated.items.ExtraSophisticatedItemColors;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.resources.ResourceLocation;
@@ -20,6 +22,8 @@ public class ClientEventHandler {
         modBus.addListener(ClientEventHandler::registerEntityRenderers);
         modBus.addListener(ClientEventHandler::registerLayer);
         modBus.addListener(ClientEventHandler::stitchTextures);
+        modBus.addListener(ExtraSophisticatedBlockColors::registerBlockColorHandlers);
+        modBus.addListener(ExtraSophisticatedItemColors::registerItemColorHandlers);
     }
 
     public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {

@@ -16,15 +16,9 @@ import net.p3pp3rf1y.sophisticatedstorage.block.StorageBlockEntity;
 import javax.annotation.Nullable;
 import java.util.List;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ExtraSophisticatedBlockColors {
-    private ExtraSophisticatedBlockColors() {
-    }
-
-    @SubscribeEvent
     public static void registerBlockColorHandlers(RegisterColorHandlersEvent.Block event) {
         event.register(ExtraSophisticatedBlockColors::getBarrelTintColor, ExtraSophisticatedBlocks.COPPER.getBarrelsInTier());
-
         event.register(ExtraSophisticatedBlockColors::getChestShulkerBoxColor, ExtraSophisticatedBlocks.COPPER.getShulkerBoxBlock().get());
     }
 

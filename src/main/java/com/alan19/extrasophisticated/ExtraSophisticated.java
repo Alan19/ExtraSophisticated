@@ -16,6 +16,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -36,7 +37,9 @@ public class ExtraSophisticated {
         ExtraSophisticatedBlockEntity.BLOCK_ENTITY_TYPES.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
-        ClientEventHandler.registerHandlers();
+        if (FMLEnvironment.dist == Dist.CLIENT) {
+            ClientEventHandler.registerHandlers();
+        }
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
