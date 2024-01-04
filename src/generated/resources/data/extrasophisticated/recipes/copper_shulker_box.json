@@ -15,9 +15,9 @@
     }
   },
   "pattern": [
-    "III",
+    "I I",
     "ISI",
-    "III"
+    "I I"
   ],
   "result": {
     "item": "extrasophisticated:copper_shulker_box"

@@ -15,9 +15,9 @@
     }
   },
   "pattern": [
-    "III",
+    "I I",
     "ISI",
-    "III"
+    "I I"
   ],
   "result": {
     "item": "extrasophisticated:limited_copper_barrel_1"
